@@ -100,14 +100,14 @@ In conclusion, LightCNN represents a compelling approach to EEG-based PD classif
 ### Dataset 
 We use EEG dataset of 28 PD and 28 control participants.
 - Original dataset can be found at [link](http://predict.cs.unm.edu/downloads). The data are in .mat formats and you need Matlab to load them. (No need for this unless you are interested into the original EEG data)
-- Raw CSV dataset used for this repo can be found at [link](https://www.dropbox.com/scl/fi/xinqn33vof0bnb9rlvmdh/raw.zip?rlkey=jb4dyumh7v82vbj36wsb53x13&dl=0). Download this before running all steps in this repo.
-
+- Raw CSV dataset used for this repo can be found at [link](https://www.dropbox.com/scl/fi/xinqn33vof0bnb9rlvmdh/raw.zip?rlkey=jb4dyumh7v82vbj36wsb53x13&dl=0). Download this before running all steps in this [repo](https://github.com/MDFahimAnjum/LightCNNforPD).
 
 ### Steps to Run Codebase
-1. Download raw CSV dataset (can be found at [link](https://www.dropbox.com/scl/fi/xinqn33vof0bnb9rlvmdh/raw.zip?rlkey=jb4dyumh7v82vbj36wsb53x13&dl=0)) and place them in the `data/raw` folder
-2. Next, the data must be processed. Run `data_processing` notebook which loads raw data and prepares training, validation and test dataset.
+1. Clone/Fork/Download the codebase from this [Repository](https://github.com/MDFahimAnjum/LightCNNforPD)
+2. Download raw CSV dataset (can be found at [link](https://www.dropbox.com/scl/fi/xinqn33vof0bnb9rlvmdh/raw.zip?rlkey=jb4dyumh7v82vbj36wsb53x13&dl=0)) and place them in the `data/raw` folder
+3. Next, the data must be processed. Run `data_processing` notebook which loads raw data and prepares training, validation and test dataset.
 
-3. Run the models and evaluate performance
+4. Run the models and evaluate performance
     1. `cnn_classifier` notebook uses CNN model as described in [Oh et. al. (2018)](https://link.springer.com/article/10.1007/s00521-018-3689-5)
     2. `deepnet_classifier` notebook uses Deep Convolutional Network as described in [Schirrmeister et. al. (2017)](https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.23730)
     3. `shallownet_classifier` notebook uses Shallow Convolutional Network as described in [Schirrmeister et. al. (2017)](https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.23730)
