@@ -90,13 +90,12 @@ In conclusion, LightCNN represents a compelling approach to EEG-based PD classif
 
 | Layer                | Output Size       | Parameters                                |
 |----------------------|--------------------|-------------------------------------------|
-| **Input**            | \[59, 2500\]       | -                                         |
-| **Conv1D**           | \[59, 2496\]       | $ 59 \times 59 \times (2 \times 5 + 1) = 6,989 $ |
-| **AvgPool1D**        | \[59, 1\]          | -                                         |
-| **Dropout**          | \[59, 1\]          | -                                         |
-| **Flatten**          | \[59\]             | -                                         |
-| **Linear (FC)**      | \[2\]              | $ 59 \times 2 + 2 = 120 $              |
-
+| **Input**            | (59, 2500)       | -                                         |
+| **Conv1D**           | (59, 2500)       | 38,350                                     |
+| **AvgPool1D**        | (59, 1)          | -                                         |
+| **Dropout**          | (59, 1)          | -                                         |
+| **Flatten**          | (59)             | -                                         |
+| **Linear (FC)**      | (2)              | 120                                       |  
 
 ### Dataset 
 We use EEG dataset of 28 PD and 28 control participants.
