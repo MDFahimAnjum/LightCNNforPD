@@ -90,22 +90,19 @@ In conclusion, LightCNN represents a compelling approach to EEG-based PD classif
 
 ### LightCNN Model Parameters
 
-| Layer                | Output Size       | Parameters                                |
-|----------------------|--------------------|-------------------------------------------|
-| **Input**            | (59, 2500)       | -                                         |
-| **Conv1D**           | (59, 2500)       | 38,350                                     |
-| **AvgPool1D**        | (59, 1)          | -                                         |
-| **Dropout**          | (59, 1)          | -                                         |
-| **Flatten**          | (59)             | -                                         |
-| **Linear (FC)**      | (2)              | 120                                       |  
+**Table: Summary of the LightCNN model architecture.**
+
+| Layer | Name       | Kernel size | Stride | Output shape | Parameters | Regularization     |
+|-------|------------|-------------|--------|--------------|------------|--------------------|
+| 0     | Input      | -           | -      | (59, 2500)   | -          | -                  |
+| 1     | Conv. 1D   | 11          | 1      | (59, 2500)   | 38,350     | Dropout (0.1)      |
+| 2     | AvgPool 1D | 2,500       | 2,500  | (59, 1)      | -          | -                  |
+| 3     | FC         | -           | -      | (2,1)        | 120        | -                  |
+
+*FC = Fully Connected layer; Conv. = Convolutional layer*
 
 Total params: 38,470
-Trainable params: 38,470
-Non-trainable params: 0
-Input size (MB): 0.56
-Forward/backward pass size (MB): 2.25
-Params size (MB): 0.15
-Estimated Total Size (MB): 2.96
+
 
 ### Dataset 
 We use EEG dataset of 28 PD and 28 control participants.
