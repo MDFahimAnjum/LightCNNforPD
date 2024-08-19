@@ -41,6 +41,8 @@ The proposed model is a lightweight CNN architecture designed for efficient clas
 
 Model parameters are given in [Appendix: LightCNN Model Parameters](#lightcnn-model-parameters).
 
+
+
 ### Training parameters
 During the training, the batch size was set to 2 with a learning rate of $1\times 10^{-4}$. Adam optimizer was utilized with a total of 80 epochs for the training.
 
@@ -97,6 +99,14 @@ In conclusion, LightCNN represents a compelling approach to EEG-based PD classif
 | **Flatten**          | (59)             | -                                         |
 | **Linear (FC)**      | (2)              | 120                                       |  
 
+Total params: 38,470
+Trainable params: 38,470
+Non-trainable params: 0
+Input size (MB): 0.56
+Forward/backward pass size (MB): 2.25
+Params size (MB): 0.15
+Estimated Total Size (MB): 2.96
+
 ### Dataset 
 We use EEG dataset of 28 PD and 28 control participants.
 - Original dataset can be found at [link](http://predict.cs.unm.edu/downloads). The data are in .mat formats and you need Matlab to load them. (No need for this unless you are interested into the original EEG data)
@@ -114,3 +124,5 @@ We use EEG dataset of 28 PD and 28 control participants.
     4. `eegnet_classifier` notebook uses EEGNet as described in [Lawhern et. al. (2018)](http://stacks.iop.org/1741-2552/15/i=5/a=056013)
     5. `crnn_classifier` notebook uses Convolutional-Recurrent Neural Network as described in [Lee et. al. (2021)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8528094/)
     6. `light_cnn_classifier` notebook uses our proposed lightweight CNN architecture. 
+    7. `light_cnn_classifier_inspection` notebook is for inspecting the features our proposed lightweight CNN architecture for interpretation.
+    7. `light_cnn_classifier_ablation` notebook is for ablation study.  

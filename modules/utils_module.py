@@ -3,6 +3,8 @@ from sklearn.metrics import confusion_matrix, accuracy_score, classification_rep
 import torch
 from tqdm import tqdm
 import random
+from scipy.signal import welch
+from scipy.stats import sem
 
 def prepare_cnn_data(lkdataset):
     signal_data=[]
@@ -82,7 +84,7 @@ def perf_metrics(y_true, y_pred,y_score):
     print("Specificity:", specificity*100)
     print("F1 Score:", f1)
     print("AUC Score:", auc)
-    return cm, sensitivity,specificity,f1,auc
+    return cm, sensitivity,precision,f1,auc
 
 def model_trainer(model,train_loader,val_loader,training_arg):
     
@@ -173,3 +175,34 @@ def model_trainer(model,train_loader,val_loader,training_arg):
              'train_results': train_results,
              'validation_results':val_results }
     return results
+
+# Calculate PSD for each epoch
+def get_PSD(epochs,fs,nperseg = 1024):
+    #nperseg Length of each segment for the Welch method
+    psd_list = []
+    freqs = None
+
+    for epoch in epochs:
+        freqs, psd = welch(epoch, fs=fs, nperseg=nperseg)
+        #psd=10*np.log10(psd)
+        psd_list.append(psd)
+
+    psd_array = np.array(psd_list)
+
+    # Calculate average and SEM of PSD across epochs
+    avg_psd = np.mean(psd_array, axis=0)
+    sem_psd = sem(psd_array, axis=0)
+    return avg_psd, sem_psd, freqs
+
+# 1D signal epochs
+def get_group_signals(sigdata,labels,group=0,channel=None):
+    epochs=[]
+    for i, label in enumerate(labels):
+        if label[0]==group:
+            if channel is None:
+                epoch=torch.mean(sigdata[i],axis=0)
+            else:
+                epoch=train_sigdata[i]
+                epoch=epoch[channel,:]
+            epochs.append(epoch)
+    return epochs
