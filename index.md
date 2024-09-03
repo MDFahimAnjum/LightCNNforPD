@@ -115,3 +115,5 @@ We use EEG dataset of 28 PD and 28 control participants.
     4. `eegnet_classifier` notebook uses EEGNet as described in [Lawhern et. al. (2018)](http://stacks.iop.org/1741-2552/15/i=5/a=056013)
     5. `crnn_classifier` notebook uses Convolutional-Recurrent Neural Network as described in [Lee et. al. (2021)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8528094/)
     6. `light_cnn_classifier` notebook uses our proposed lightweight CNN architecture. 
+
+5. If you want to generate the CSV files yourself, use the Matlab script `matlab_process.m` in `MatLab Codes` folder. You will need Matlab and [EEGLab](https://sccn.ucsd.edu/eeglab/index.php). 
