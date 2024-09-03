@@ -124,4 +124,4 @@ We use EEG dataset of 28 PD and 28 control participants.
     7. `light_cnn_classifier_inspection` notebook is for inspecting the features our proposed lightweight CNN architecture for interpretation.
     7. `light_cnn_classifier_ablation` notebook is for ablation study.  
 
-5. If you want to generate the CSV files yourself, use the Matlab script `matlab_process.m` in `MatLab Codes` folder. You will need Matlab and [EEGLab](https://sccn.ucsd.edu/eeglab/index.php). 
+5. If you want to generate the CSV files yourself, use the Matlab script `matlab_process.m` in `MatLab Codes` folder. You will need Matlab and [EEGLab](https://sccn.ucsd.edu/eeglab/index.php). The script will generate CSV files and plots which you can manually inspect to see which data were too corrupted with noise and you can ignore those. 
