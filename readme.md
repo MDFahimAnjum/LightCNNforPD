@@ -1,9 +1,25 @@
 # LightCNN: A Single-Layer Model Outperforming Deep-CNN and CRNN in PD Classification
+
+**Main Article:  [Parkinson's Disease Classification via EEG: All You Need is a Single Convolutional Layer](https://doi.org/10.48550/arXiv.2408.10457)**
+
 In this work, we propose LightCNN, a lightweight Convolutional Neural Network (CNN) architecture designed for efficient and effective Parkinson's disease (PD) classification using EEG data. LightCNN features a simple architecture with a single convolutional layer followed by pooling and fully connected layers, emphasizing computational efficiency without sacrificing performance.
 
 We benchmarked LightCNN against several established deep learning architectures known for their effectiveness in EEG-based PD classification, including a Convolutional Recurrent Neural Network (CRNN) that combines CNN and Gated Recurrent Unit (GRU) layers. Our results show that LightCNN outperforms all existing methods by significant margins across all key metrics: a 2.3% improvement in recall, a 4.6% increase in precision, a 0.1% advantage in AUC, a 4% boost in F1-score, and a 3.3% higher accuracy compared to the closet competitor. These findings highlight LightCNN's ability to deliver high performance while maintaining computational simplicity, making it a suitable candidate for deployment in resource-limited environments, such as mobile or embedded systems for EEG analysis.
 
 In summary, LightCNN represents a significant step forward in EEG-based PD classification, demonstrating that a well-designed, lightweight model can achieve superior performance over more complex architectures. This work underscores the potential for simple, efficient models to meet the demands of modern healthcare applications, particularly in scenarios where resources are constrained.
+
+## Citation
+If you use this article, dataset or code in your research, please cite the following paper:
+
+        @misc{anjum2024parkinsonsdiseaseclassificationeeg,
+            title={Parkinson's Disease Classification via EEG: All You Need is a Single Convolutional Layer}, 
+            author={Md Fahim Anjum},
+            year={2024},
+            eprint={2408.10457},
+            archivePrefix={arXiv},
+            primaryClass={cs.LG},
+            url={https://arxiv.org/abs/2408.10457}, 
+        }
 
 ## List of contents
 1. [Introduction](#introduction)
